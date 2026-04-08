@@ -9,12 +9,8 @@
 .hero-section::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  padding: 100px;
-  background: rgba(0, 0, 0, 0.6);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
 }
 
 /* Content above overlay */
@@ -23,15 +19,26 @@
   z-index: 1;
 }
 
-/* Card hover effect */
+/* Card Styling */
 .card {
-  transition: 0.3s;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
-/* Floating label input */
+
+/* Card Image */
+.card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Floating Label Input */
 .input-box {
   position: relative;
   margin-bottom: 20px;
@@ -46,35 +53,63 @@
   outline: none;
   background: #6c757d;
   border-radius: 8px;
-  color: #000;
+  color: #fff;
 }
 
 /* Label */
-/* .input-box label {
+.input-box label {
   position: absolute;
   left: 12px;
   top: 12px;
-  color: #1a1a1a;
+  color: #ddd;
   font-size: 14px;
   transition: 0.3s;
   pointer-events: none;
-} */
+}
 
 /* Animation on focus or input */
-/* .input-box input:focus + label,
+.input-box input:focus + label,
 .input-box input:valid + label,
 .input-box textarea:focus + label,
 .input-box textarea:valid + label {
   top: -10px;
   left: 10px;
-  background: #212529;
-  padding: 0 5px;
+  background: #ff4d4d;
+  padding: 0 6px;
   font-size: 12px;
-  color: #ff4d4d; */
-/* } */
+  color: #fff;
+  border-radius: 5px;
+}
 
 /* Focus glow */
 .input-box input:focus,
 .input-box textarea:focus {
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+/* Service Button (Improved) */
+.service-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #ff0000, #ff6a00);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+.service-btn:hover {
+  background: white;
+  color: #ff0000;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+}
+.container.d-flex.justify-content-between.align-items-center {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
 }
