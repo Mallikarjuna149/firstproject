@@ -1,115 +1,278 @@
-/* Hero Section */
-.hero-section {
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111;
+  color: white;
+}
+
+/* CONTAINER */
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  padding: 18px 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #ff0000, #ff6a00);
+  transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-menu a:hover {
+  color: #ff4d4d;
+}
+
+/* ================= HERO ================= */
+
+.hero {
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e') no-repeat center center/cover;
+  background: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   position: relative;
 }
 
-/* Dark overlay */
-.hero-section::before {
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.65);
 }
 
-/* Content above overlay */
-.hero-section .content {
+.hero-content {
   position: relative;
   z-index: 1;
 }
 
-/* Card Styling */
-.card {
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+.hero p {
+  font-size: 18px;
 }
 
-/* Card Image */
-.card img {
-  height: 180px;
-  object-fit: cover;
-}
+/* ================= BUTTON ================= */
 
-/* Floating Label Input */
-.input-box {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-/* Input & textarea */
-.input-box input,
-.input-box textarea {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  outline: none;
-  background: #6c757d;
-  border-radius: 8px;
-  color: #fff;
-}
-
-/* Label */
-.input-box label {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  color: #ddd;
-  font-size: 14px;
-  transition: 0.3s;
-  pointer-events: none;
-}
-
-/* Animation on focus or input */
-.input-box input:focus + label,
-.input-box input:valid + label,
-.input-box textarea:focus + label,
-.input-box textarea:valid + label {
-  top: -10px;
-  left: 10px;
-  background: #ff4d4d;
-  padding: 0 6px;
-  font-size: 12px;
-  color: #fff;
-  border-radius: 5px;
-}
-
-/* Focus glow */
-.input-box input:focus,
-.input-box textarea:focus {
-  box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
-}
-
-/* Service Button (Improved) */
-.service-btn {
+.btn-main {
   display: inline-block;
   padding: 10px 25px;
-  margin-top: 12px;
+  background: red;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  border: none;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn-main:hover {
+  background: #ff4d4d;
+}
+
+/* ================= SERVICES ================= */
+
+.services {
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* FULL WIDTH ROW */
+.services-row {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* CARD */
+.service-card {
+  flex: 1;
+  background: #2b2f34;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.service-card h4 {
+  margin-top: 15px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* SERVICE BUTTON */
+.btn-service {
+  display: block;
+  width: 80%;
+  margin: 15px auto 0;
+  padding: 12px;
   background: linear-gradient(135deg, #ff0000, #ff6a00);
   color: white;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+  text-align: center;
+  transition: 0.3s;
 }
 
-.service-btn:hover {
+.btn-service:hover {
   background: white;
-  color: #ff0000;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+  color: red;
 }
-.container.d-flex.justify-content-between.align-items-center {
-  display: flex;
-  justify-content: space-between;
-  align-items:flex-start;
+
+/* ================= DIET ================= */
+
+.diet {
+  padding: 100px 0;
+  background: #333;
+  text-align: center;
+}
+
+.diet-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.diet-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* FORM BOX */
+.contact-form {
+  max-width: 350px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* INPUT GROUP */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #2c2c2c;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* LABEL FIX */
+.form-group label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+  top: -10px;
+  font-size: 12px;
+  background: red;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .services-row {
+    flex-direction: column;
+  }
 }

@@ -5,118 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PowerFit Gym</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Custom CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- Navbar -->
-<header class="bg-black text-white py-3 shadow-lg fixed w-100 z-50">
-  <div class="container d-flex justify-content-between align-items-center">
-    
+<header class="navbar">
+  <div class="container nav-container">
     <h2 class="logo">PowerFit</h2>
 
     <nav>
-      <ul class="d-flex gap-4 m-0">
-        <li><a href="#hero" class="text-white text-decoration-none hover:text-danger">Home</a></li>
-        <li><a href="#services" class="text-white text-decoration-none hover:text-danger">Services</a></li>
-        <li><a href="#contact" class="text-white text-decoration-none hover:text-danger">Contact</a></li>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#diet">Diet</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
   </div>
 </header>
 
-<!-- Hero Section -->
-<section id="hero" class="hero-section d-flex align-items-center justify-content-center text-center">
-  <div class="content text-white">
-    <h1 class="display-2 fw-bold mb-3">Transform Your Body</h1>
-    <p class="lead mb-4">Push your limits with PowerFit Gym</p>
-    <a href="#contact" class="btn btn-danger px-5 py-3 rounded-pill fw-semibold">Join Now</a>
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Transform Your Body</h1>
+    <p>Push your limits with PowerFit Gym</p>
+    <a href="#contact" class="btn-main">Join Now</a>
   </div>
 </section>
 
 <!-- Services -->
-<section id="services" class="py-5 bg-dark text-white">
-  <div class="container text-center">
-    <h2 class="mb-5 fw-bold">Our Services</h2>
+<section id="services" class="services">
+  <div class="container">
+    <h2>Our Services</h2>
 
-    <div class="row g-4">
+    <div class="service-grid">
 
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card bg-secondary text-white p-3 h-100">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" class="img-fluid rounded mb-3">
-          <h4>Personal Training</h4>
-          <p>Expert trainers to guide your fitness journey.</p>
-          <a href="#" class="service-btn">Learn More</a>
-        </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b">
+        <h4>Personal Training</h4>
+        <p>Expert trainers to guide your fitness journey.</p>
+        <a href="#" class="btn-service">Learn More</a>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card bg-secondary text-white p-3 h-100">
-          <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1" class="img-fluid rounded mb-3">
-          <h4>Cardio Training</h4>
-          <p>Improve stamina and heart health.</p>
-          <a href="#" class="service-btn">Learn More</a>
-        </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1">
+        <h4>Cardio Training</h4>
+        <p>Improve stamina and heart health.</p>
+        <a href="#" class="btn-service">Learn More</a>
       </div>
 
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card bg-secondary text-white p-3 h-100">
-          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61" class="img-fluid rounded mb-3">
-          <h4>Weight Lifting</h4>
-          <p>Build strength and muscle effectively.</p>
-          <a href="#" class="service-btn">Learn More</a>
-        </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61">
+        <h4>Weight Lifting</h4>
+        <p>Build strength and muscle effectively.</p>
+        <a href="#" class="btn-service">Learn More</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="py-5 bg-black text-white">
-  <div class="container text-center">
-    <h2 class="mb-4 fw-bold">Get In Touch</h2>
+<!-- Diet -->
+<section id="diet" class="diet">
+  <div class="container">
+    <h2>Get Your Diet Plan</h2>
 
-    <form class="mx-auto" style="max-width: 500px;">
+    <div class="diet-form">
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="number" id="age" placeholder="Age">
+      <input type="number" id="height" placeholder="Height (cm)">
+      <input type="number" id="weight" placeholder="Weight (kg)">
 
-      <div class="input-box">
-        <input type="text" required>
-        <label>Your Name</label>
-      </div>
-
-      <div class="input-box">
-        <input type="email" required>
-        <label>Your Email</label>
-      </div>
-
-      <div class="input-box">
-        <textarea rows="4" required></textarea>
-        <label>Your Message</label>
-      </div>
-
-      <button class="btn btn-danger w-100 mt-3 py-2 fw-semibold rounded-pill">
-        Send Message
+      <button onclick="generateDiet()" class="btn-main">
+        Get Diet Plan
       </button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Get In Touch</h2>
+
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" required>
+        <label>Name</label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="form-group">
+        <textarea rows="4" required></textarea>
+        <label>Message</label>
+      </div>
+
+      <button class="btn-main">Send Message</button>
     </form>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-dark text-center py-3 text-white">
-  <p class="m-0">© 2026 PowerFit Gym | All Rights Reserved</p>
+<footer class="footer">
+  <p>© 2026 PowerFit Gym</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
